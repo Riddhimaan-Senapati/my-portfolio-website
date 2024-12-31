@@ -2,6 +2,7 @@
 
 import * as React from 'react'
 import Link from 'next/link'
+import { ThemeToggle } from '@/components/theme-toggle'
 
 import {
   NavigationMenu,
@@ -47,6 +48,9 @@ const Header = () => {
             </NavigationMenuItem>
           </NavigationMenuList>
         </NavigationMenu>
+        <div className="ml-auto">
+          <ThemeToggle />
+        </div>
       </div>
     </header>
   )
