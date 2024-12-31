@@ -4,16 +4,28 @@ import { Badge } from '@/components/ui/badge'
 
 const projects = [
   {
-    title: 'E-commerce Platform',
-    description: 'A full-stack e-commerce solution with React and Node.js',
+    title: 'Plowtion',
+    description: 'An AI-powered schedule builder for farmers',
     image: '/placeholder.svg?height=200&width=300',
-    tags: ['React', 'Node.js', 'MongoDB'],
+    tags: ['Next.Js', 'Docker','Tensorflow'],
   },
   {
-    title: 'Task Management App',
-    description: 'A productivity app built with Next.js and Firebase',
+    title: 'Codestrike',
+    description: 'A CS-GO inspired website where you can PvP leetcode problems',
     image: '/placeholder.svg?height=200&width=300',
-    tags: ['Next.js', 'Firebase', 'Tailwind CSS'],
+    tags: ['React.Js', 'Docker','Express.Js','Node.Js'],
+  },
+  {
+    title: 'Course Advisor',
+    description: 'An AI-powered app to analyze course descriptions, provide recommendations and see professor rankings',
+    image: '/placeholder.svg?height=200&width=300',
+    tags: ['Streamlit', 'OpenAI','RESTful API'],
+  },
+  {
+    title: 'Airport Coordinator',
+    description: 'A website to help international students coordinate their trips for ridesharing',
+    image: '/placeholder.svg?height=200&width=300',
+    tags: ['React.Js', 'MongoDB','Node.Js'],
   },
 ]
 
