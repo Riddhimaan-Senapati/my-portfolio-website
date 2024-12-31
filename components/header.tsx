@@ -25,6 +25,13 @@ const Header = () => {
               </Link>
             </NavigationMenuItem>
             <NavigationMenuItem>
+              <Link href="#about" legacyBehavior passHref>
+                <NavigationMenuLink className={navigationMenuTriggerStyle()}>
+                  About Me
+                </NavigationMenuLink>
+              </Link>
+            </NavigationMenuItem>
+            <NavigationMenuItem>
               <Link href="#skills" legacyBehavior passHref>
                 <NavigationMenuLink className={navigationMenuTriggerStyle()}>
                   Skills

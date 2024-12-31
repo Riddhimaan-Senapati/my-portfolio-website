@@ -6,13 +6,13 @@ const projects = [
   {
     title: 'Plowtion',
     description: 'An AI-powered schedule builder for farmers',
-    image: '/placeholder.svg?height=200&width=300',
+    image: '/plowtion.png',
     tags: ['Next.Js', 'Docker','Tensorflow'],
   },
   {
     title: 'Codestrike',
     description: 'A CS-GO inspired website where you can PvP leetcode problems',
-    image: '/placeholder.svg?height=200&width=300',
+    image: '/codestrike.png',
     tags: ['React.Js', 'Docker','Express.Js','Node.Js'],
   },
   {
@@ -24,7 +24,7 @@ const projects = [
   {
     title: 'Airport Coordinator',
     description: 'A website to help international students coordinate their trips for ridesharing',
-    image: '/placeholder.svg?height=200&width=300',
+    image: '/airport_coordinator.jpg',
     tags: ['React.Js', 'MongoDB','Node.Js'],
   },
 ]

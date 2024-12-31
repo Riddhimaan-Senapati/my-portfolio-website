@@ -1,23 +1,34 @@
 import { Button } from '@/components/ui/button'
+import Image from 'next/image'
 
 const Hero = () => {
   return (
-    <section className="py-24 text-center">
-      <h1 className="text-4xl font-bold tracking-tighter sm:text-5xl md:text-6xl">Welcome to My Portfolio</h1>
-      <div className="mt-4">
-        <img
-          src="https://readme-typing-svg.demolab.com/?lines=👋+Hi!+I'm+Riddhimaan!;+software+developer;+AI/ML+enthusiast" 
-          alt="Animated text showing: Hi! I'm Riddhimaan!, software developer, AI/ML enthusiast"
-          className="mx-auto"
+    <section className="py-24 flex flex-col md:flex-row items-center justify-between">
+      <div className="mb-8 md:mb-0 md:w-1/2 flex justify-center md:justify-start">
+        <Image
+          src="/profile_photo.jpeg"
+          alt="Riddhimaan's photo"
+          width={300}
+          height={300}
+          className="rounded-full"
         />
       </div>
-      <Button className="mt-8" size="lg" asChild>
-        <a href="mailto:riddhimaan22@gmail.com">Get in Touch</a>
-      </Button>
+      <div className="text-center md:text-left md:w-1/2">
+        <h1 className="text-4xl font-bold tracking-tighter sm:text-5xl md:text-6xl">Welcome!</h1>
+        <div className="mt-4">
+          <img 
+            src="https://readme-typing-svg.demolab.com/?lines=👋+Hi!+I'm+Riddhimaan!;+software+developer;+AI/ML+enthusiast" 
+            alt="Animated text showing: Hi! I'm Riddhimaan!, software developer, AI/ML enthusiast"
+            className="mx-auto md:mx-0"
+          />
+        </div>
+        <Button className="mt-8" size="lg" asChild>
+          <a href="#contact">Get in Touch</a>
+        </Button>
+      </div>
     </section>
   )
 }
 
 export default Hero
-
 
