@@ -4,6 +4,7 @@ import Skills from '@/components/skills'
 import Projects from '@/components/projects'
 import AboutMe from '@/components/about-me'
 import Contact from '@/components/contacts'
+import GitHubStats from '@/components/github-stats'
 
 export default function Home() {
   return (
@@ -14,6 +15,7 @@ export default function Home() {
         <AboutMe />
         <Skills />
         <Projects />
+        <GitHubStats />
         <Contact />
       </main>
     </div>
