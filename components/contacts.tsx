@@ -19,10 +19,10 @@ const Contact = () => {
             </a>
           </Button>
           <Button variant="outline" className="w-full" asChild>
-            <a href="mailto:riddhimaan22@gmail.com">
-              <Mail className="mr-2 h-4 w-4" />
+          <a target="_blank" href="https://mail.google.com/mail/?view=cm&amp;fs=1&amp;to=riddhimaan22@gmail.com">
+             <Mail className="mr-2 h-4 w-4" />
               Email
-            </a>
+          </a>
           </Button>
         </CardContent>
       </Card>
