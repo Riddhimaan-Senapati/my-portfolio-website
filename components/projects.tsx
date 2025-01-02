@@ -2,6 +2,8 @@ import Image from 'next/image'
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
 import Link from 'next/link'
+import { Button } from '@/components/ui/button'
+import { Github, ExternalLink } from 'lucide-react'
 
 const projects = [
   {
@@ -10,6 +12,7 @@ const projects = [
     image: '/plowtion.png',
     tags: ['Next.Js', 'Docker','Tensorflow'],
     link: 'https://github.com/Aadityaa2004/Plowtion',
+    demo:"https://www.youtube.com/watch?v=GYeHbwub1oI",
   },
 
   {
@@ -18,6 +21,7 @@ const projects = [
     image: '/codestrike.png',
     tags: ['React.Js', 'Docker','Express.Js','Node.Js'],
     link: 'https://github.com/craigbsch/CodeStrike',
+    demo:"https://www.youtube.com/watch?v=qSjl_q2JoYw",
   },
 
   {
@@ -60,7 +64,23 @@ const Projects = () => {
                   alt=""
                 />
               </Link>
-              <CardDescription>{project.description}</CardDescription>
+              <CardDescription className="mb-4">{project.description}</CardDescription>
+              <div className="flex gap-2">
+                <Button variant="outline" size="sm" asChild>
+                  <Link href={project.link} target="_blank" rel="noopener noreferrer">
+                    <Github className="mr-2 h-4 w-4" />
+                    Code
+                  </Link>
+                </Button>
+                {project.demo && (
+                  <Button variant="outline" size="sm" asChild>
+                    <Link href={project.demo} target="_blank" rel="noopener noreferrer">
+                      <ExternalLink className="mr-2 h-4 w-4" />
+                      Live Demo
+                    </Link>
+                  </Button>
+                )}
+              </div>
             </CardContent>
             <CardFooter>
               {project.tags.map((tag) => (
@@ -77,3 +97,4 @@ const Projects = () => {
 }
 
 export default Projects
+
