@@ -27,7 +27,7 @@ const projects = [
   {
     title: 'Course Advisor',
     description: 'An AI-powered app to analyze course descriptions, provide recommendations and see professor rankings',
-    image: '/placeholder.svg?height=200&width=300',
+    image: '/CourseAdvisor.png',
     tags: ['Streamlit', 'OpenAI','RESTful API'],
     link: 'https://github.com/Riddhimaan-Senapati/CourseAdvisor',
   },
