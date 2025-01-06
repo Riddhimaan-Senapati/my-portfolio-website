@@ -8,11 +8,6 @@ const GitHubStats = () => {
           alt="Riddhimaan's GitHub stats"
           className="rounded-lg"
         />
-        <img
-          src="https://streak-stats.demolab.com?user=Riddhimaan-Senapati"
-          alt="GitHub Streak"
-          className="rounded-lg"
-        />
       </div>
     </section>
   )
