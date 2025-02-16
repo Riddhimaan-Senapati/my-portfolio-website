@@ -7,6 +7,15 @@ import { Github, ExternalLink } from 'lucide-react'
 
 const projects = [
   {
+    title: 'TL;DR Mail',
+    description: 'An AI-powered app to analyze course descriptions, provide recommendations and see professor rankings',
+    image: '/tldrmail.png',
+    tags: ['NextJs', 'OpenAI','Clerk','Google API'],
+    link: 'https://github.com/Riddhimaan-Senapati/tldrmail',
+    demo: "https://www.youtube.com/watch?v=xUNG3yKc2hk",
+  },
+
+  {
     title: 'Plowtion',
     description: 'An AI-powered schedule builder for farmers',
     image: '/plowtion.png',
@@ -76,7 +85,7 @@ const Projects = () => {
                   <Button variant="outline" size="sm" asChild>
                     <Link href={project.demo} target="_blank" rel="noopener noreferrer">
                       <ExternalLink className="mr-2 h-4 w-4" />
-                      Live Demo
+                      Video Demo
                     </Link>
                   </Button>
                 )}
