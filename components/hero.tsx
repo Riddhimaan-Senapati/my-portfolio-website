@@ -28,7 +28,7 @@ const Hero = () => {
         </Button>
         
         <Button size="lg" variant="outline" className="bg-yellow-400 hover:bg-yellow-500 text-black border-yellow-500" asChild>
-            <a href="https://drive.google.com/file/d/12t5e_3T9QRfO4jA4o0rEvoXvEpeAFCEL/view?usp=sharing" target="_blank" rel="noopener noreferrer">
+            <a href="https://drive.google.com/file/d/1TZIsH25h8UJJcQBHQud1Vv25V94WVrwZ/view?usp=sharing" target="_blank" rel="noopener noreferrer">
               View Resume
             </a>
           </Button>

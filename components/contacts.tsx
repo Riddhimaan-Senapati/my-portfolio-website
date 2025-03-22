@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
-import { Github, Mail } from 'lucide-react'
+import { Github, Mail, Linkedin } from 'lucide-react'
 
 const Contact = () => {
   return (
@@ -19,10 +19,16 @@ const Contact = () => {
             </a>
           </Button>
           <Button variant="outline" className="w-full" asChild>
-          <a target="_blank" href="https://mail.google.com/mail/?view=cm&amp;fs=1&amp;to=riddhimaan22@gmail.com">
-             <Mail className="mr-2 h-4 w-4" />
+            <a target="_blank" href="https://mail.google.com/mail/?view=cm&amp;fs=1&amp;to=riddhimaan22@gmail.com">
+              <Mail className="mr-2 h-4 w-4" />
               Email
-          </a>
+            </a>
+          </Button>
+          <Button variant="outline" className="w-full" asChild>
+            <a href="https://www.linkedin.com/in/riddhimaan-senapati/" target="_blank" rel="noopener noreferrer">
+              <Linkedin className="mr-2 h-4 w-4" />
+              LinkedIn
+            </a>
           </Button>
         </CardContent>
       </Card>
