@@ -18,7 +18,7 @@ const GitHubStats = () => {
       <h2 className="mb-12 text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl text-center">GitHub Stats</h2>
       <div className="flex flex-col items-center space-y-8">
         <img
-          src={`https://github-readme-stats-drab-zeta-42.vercel.app/api?username=Riddhimaan-Senapati&show_icons=true${currentTheme === 'dark' ? '&theme=radical' : ''}`}
+          src={`https://github-readme-stats.vercel.app/api?username=Riddhimaan-Senapati&show_icons=true${currentTheme === 'dark' ? '&theme=radical' : ''}`}
           alt={`Riddhimaan's GitHub stats (${currentTheme} Mode)`}
           className="rounded-lg"
         />
