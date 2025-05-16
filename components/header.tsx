@@ -2,7 +2,8 @@
 
 import * as React from 'react'
 import Link from 'next/link'
-import { ThemeToggle } from '@/components/theme-toggle'
+// import { ThemeToggle } from '@/components/theme-toggle' // Old toggle
+import { ThemeSwitcher } from '@/components/theme-switcher' // New switcher
 
 import {
   NavigationMenu,
@@ -56,7 +57,8 @@ const Header = () => {
           </NavigationMenuList>
         </NavigationMenu>
         <div className="ml-auto">
-          <ThemeToggle />
+          {/* <ThemeToggle /> */}
+          <ThemeSwitcher />
         </div>
       </div>
     </header>

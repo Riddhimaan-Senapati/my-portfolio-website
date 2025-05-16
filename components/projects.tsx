@@ -7,6 +7,17 @@ import { Github, ExternalLink } from 'lucide-react'
 
 const projects = [
   {
+    title: 'Recuvia',
+    description:
+      'a modern web application designed to help people find their lost items and report found items using AI-powered image and text search capabilities. ',
+    image: '/Recuvia.png',
+    tags: ['NextJs', 'Supabase', 'pgvector', 'postgresql'],
+    link: 'https://github.com/Riddhimaan-Senapati/Recuvia',
+    demo: '',
+    website_link: 'https://recuvia.vercel.app/',
+  },
+
+  {
     title: 'TL;DR Mail',
     description:
       'AI-powered email assistant to summarize emails, extract key event details, and track deadlines',
