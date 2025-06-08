@@ -5,6 +5,7 @@ import Projects from '@/components/projects'
 import AboutMe from '@/components/about-me'
 import Contact from '@/components/contacts'
 import GitHubStats from '@/components/github-stats'
+import PreviousExperience from '@/components/previous-experience'
 
 export default function Home() {
   return (
@@ -13,6 +14,7 @@ export default function Home() {
       <main className="container mx-auto px-4 py-8">
         <Hero />
         <AboutMe />
+        <PreviousExperience />
         <Skills />
         <Projects />
         <GitHubStats />
