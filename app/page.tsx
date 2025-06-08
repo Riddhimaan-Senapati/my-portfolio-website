@@ -6,6 +6,7 @@ import AboutMe from '@/components/about-me'
 import Contact from '@/components/contacts'
 import GitHubStats from '@/components/github-stats'
 import PreviousExperience from '@/components/previous-experience'
+import Certifications from '@/components/certifications'
 
 export default function Home() {
   return (
@@ -16,6 +17,7 @@ export default function Home() {
         <AboutMe />
         <PreviousExperience />
         <Skills />
+        <Certifications />
         <Projects />
         <GitHubStats />
         <Contact />
