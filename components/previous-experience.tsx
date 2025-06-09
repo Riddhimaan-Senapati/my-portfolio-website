@@ -17,7 +17,7 @@ const PreviousExperience = () => {
           <ul className="list-disc list-inside space-y-2">
             <li>Contributed to a team developing an innovative RAG (Retrieval Augmented Generation) chatbot for the UMass Unity High-Performance Computing (HPC) center.</li>
             <li>Built the frontend with Streamlit and architected the RAG pipeline using AWS Bedrock for the backend.</li>
-            <li>Created a knowledge base by scraping over 164+ documentation links, enhancing user support and accessibility for HPC resources.</li>
+            <li>Created a knowledge base by scraping over 164+ documentation links, enhancing user support and accessibility for HPC resources. For more details you may contact me <a href="mailto:Riddhimaan.Senapati@mass.gov" className="text-blue-500 underline">here</a></li>
           </ul>
         </div>
 
