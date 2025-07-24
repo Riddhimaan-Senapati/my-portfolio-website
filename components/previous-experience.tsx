@@ -15,9 +15,13 @@ const PreviousExperience = () => {
           <p className="text-lg text-muted-foreground mb-1">Commonwealth of Massachusetts</p>
           <p className="text-sm text-muted-foreground mb-4">April 2025 – Present</p>
           <ul className="list-disc list-inside space-y-2">
-            <li>Contributed to a team developing an innovative RAG (Retrieval Augmented Generation) chatbot for the UMass Unity High-Performance Computing (HPC) center.</li>
-            <li>Built the frontend with Streamlit and architected the RAG pipeline using AWS Bedrock for the backend.</li>
-            <li>Created a knowledge base by scraping over 164+ documentation links, enhancing user support and accessibility for HPC resources. For more details you may contact me <a href="mailto:Riddhimaan.Senapati@mass.gov" className="text-blue-500 underline">here</a></li>
+            <li>Built an innovative Retrieval Augmented Generation (RAG) chatbot using streamlit, LangChain, AWS Bedrock for the UMass Unity HPC &
+            AI platform, serving 500+ users with technical support hosted at the Massachusetts Green High Performance Computing Center (MGHPCC).</li>
+            <li>Engineered an automated data pipeline for AWS Knowledge Base, leveraging AWS Lambda and EventBridge to refresh 164+ documents weekly, ensuring data accuracy and currency for 500+ users.</li>
+            <li>Implemented CI/CD pipeline with GitHub Actions, Docker and AWS CloudFormation to deploy and manage application on AWS ECS with
+            99.99% uptime.</li>
+            <li>Enhanced accessibility to MGHPCC resources, reducing average support response time by 30%. </li>
+             <li>For more details you may contact me <a href="mailto:Riddhimaan.Senapati@mass.gov" className="text-blue-500 underline">here</a></li>
           </ul>
         </div>
 
@@ -31,7 +35,7 @@ const PreviousExperience = () => {
           <p className="text-sm text-muted-foreground mb-4">Sep 2024 – Present</p>
           <ul className="list-disc list-inside space-y-2">
             <li>Developed a React Native quiz app with local storage for offline access, boosting user satisfaction by 25%.</li>
-            <li>Created an authenticated admin page for clients to manage quiz questions without coding, enhancing content flexibility.</li>
+            <li>Created awithn authenticated admin page for clients to manage quiz questions without coding, enhancing content flexibility.</li>
           </ul>
         </div>
 
