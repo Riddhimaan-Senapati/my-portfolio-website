@@ -2,6 +2,7 @@
 
 import { useTheme } from 'next-themes'
 import { useEffect, useState } from 'react'
+import Image from 'next/image'
 
 const GitHubStats = () => {
   const { theme, systemTheme } = useTheme()
@@ -13,14 +14,19 @@ const GitHubStats = () => {
     setCurrentTheme(resolvedTheme || 'light')
   }, [theme, systemTheme])
 
+  const src = `https://github-readme-stats.vercel.app/api?username=Riddhimaan-Senapati&show_icons=true${currentTheme === 'dark' ? '&theme=radical' : ''}`
+
   return (
     <section id="github-stats" className="py-24">
       <h2 className="mb-12 text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl text-center">GitHub Stats</h2>
       <div className="flex flex-col items-center space-y-8">
-        <img
-          src={`https://github-readme-stats.vercel.app/api?username=Riddhimaan-Senapati&show_icons=true${currentTheme === 'dark' ? '&theme=radical' : ''}`}
+        <Image
+          src={src}
           alt={`Riddhimaan's GitHub stats (${currentTheme} Mode)`}
+          width={500}
+          height={200}
           className="rounded-lg"
+          unoptimized
         />
       </div>
     </section>

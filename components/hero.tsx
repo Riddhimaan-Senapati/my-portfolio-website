@@ -17,10 +17,13 @@ const Hero = () => {
       <div className="text-center md:text-left md:w-1/2">
         <h1 className="text-4xl font-bold tracking-tighter sm:text-5xl md:text-6xl">Welcome!</h1>
         <div className="mt-4">
-          <img 
-            src="https://readme-typing-svg.demolab.com/?lines=👋+Hi!+I'm+Riddhimaan!;+software+developer;+AI/ML+enthusiast" 
+          <Image
+            src={`https://readme-typing-svg.demolab.com/?lines=%F0%9F%91%8B+Hi!+I'm+Riddhimaan!;+software+developer;+AI/ML+enthusiast`}
             alt="Animated text showing: Hi! I'm Riddhimaan!, software developer, AI/ML enthusiast"
+            width={600}
+            height={60}
             className="mx-auto md:mx-0"
+            unoptimized
           />
         </div>
         <Button className="mt-8" size="lg" asChild>
