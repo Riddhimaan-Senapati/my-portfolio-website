@@ -6,7 +6,14 @@ const Certifications = () => {
         <div className="space-y-8">
           <div>
             <p className="text-2xl font-semibold mb-2">
-              <a href="https://www.credly.com/badges/c6b05266-8415-452c-a136-78bbec3697aa/" target="_blank" rel="noopener noreferrer" className="text-blue-500 hover:underline">
+              <a href="https://www.credly.com/badges/42ee21f3-762c-478f-a83c-4e16a6aabfdc/public_url" target="_blank" rel="noopener noreferrer" className="text-blue-500 hover:underline">
+                AWS Certified AI Practitioner
+              </a>
+            </p>
+          </div>
+          <div>
+            <p className="text-2xl font-semibold mb-2">
+              <a href="https://www.credly.com/badges/c6b05266-8415-452c-a136-78bbec3697aa/public_url" target="_blank" rel="noopener noreferrer" className="text-blue-500 hover:underline">
                 AWS Certified Cloud Practitioner
               </a>
             </p>

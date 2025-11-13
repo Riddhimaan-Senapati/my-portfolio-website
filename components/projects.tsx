@@ -6,6 +6,17 @@ import { Button } from '@/components/ui/button'
 import { Github, ExternalLink } from 'lucide-react'
 
 const projects = [
+    {
+    title: 'DoorSmashOrPass',
+    description:
+      'A campus food delivery platform that connects students with student couriers while providing AI-powered nutrition coaching. ',
+    image: '/doorsmashorpass.png',
+    tags: ['NextJs', 'ElevenLabs', 'Supabase', 'AWS lambda','Gemini API','AWS ECR'],
+    link: 'https://github.com/icedmoch/doorsmashorpass',
+    demo: 'https://youtu.be/9kZN4feIgps',
+    website_link: 'https://doorsmash.vercel.app/',
+  },
+
   {
     title: 'Recuvia',
     description:
@@ -16,6 +27,7 @@ const projects = [
     demo: '',
     website_link: 'https://recuvia.vercel.app/',
   },
+
 
   {
     title: 'TL;DR Mail',
