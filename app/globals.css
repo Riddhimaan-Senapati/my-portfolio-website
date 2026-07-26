@@ -58,9 +58,124 @@
   html {
     scroll-behavior: smooth;
   }
+  /* Clears the sticky header on anchor jumps, plus the 28px the section rises as its
+     entrance animation settles. */
+  section[id] {
+    scroll-margin-top: 7rem;
+  }
 }
 
 * {
   transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* ---------------------------------------------------------------------------
+   Syntax highlighting for blog code blocks.
+
+   rehype-highlight emits highlight.js class names. Rather than importing one of
+   highlight.js's prebuilt stylesheets (which are single-theme), these tokens are
+   defined against CSS variables so code follows the site's light/dark theme.
+   --------------------------------------------------------------------------- */
+:root {
+  --code-keyword: 265 55% 45%;
+  --code-string: 145 45% 32%;
+  --code-comment: 215 14% 50%;
+  --code-number: 25 75% 42%;
+  --code-function: 217 75% 45%;
+  --code-attr: 190 60% 32%;
+  --code-literal: 340 60% 45%;
+}
+
+.dark {
+  --code-keyword: 265 80% 78%;
+  --code-string: 140 50% 65%;
+  --code-comment: 215 15% 58%;
+  --code-number: 30 85% 68%;
+  --code-function: 210 90% 72%;
+  --code-attr: 185 65% 65%;
+  --code-literal: 340 75% 72%;
+}
+
+.hljs-comment,
+.hljs-quote,
+.hljs-doctag {
+  color: hsl(var(--code-comment));
+  font-style: italic;
+}
+
+.hljs-keyword,
+.hljs-selector-tag,
+.hljs-section,
+.hljs-meta {
+  color: hsl(var(--code-keyword));
+}
+
+.hljs-string,
+.hljs-regexp,
+.hljs-addition,
+.hljs-symbol,
+.hljs-bullet {
+  color: hsl(var(--code-string));
+}
+
+.hljs-number,
+.hljs-literal,
+.hljs-deletion {
+  color: hsl(var(--code-number));
+}
+
+.hljs-title,
+.hljs-title.class_,
+.hljs-title.function_,
+.hljs-name,
+.hljs-built_in {
+  color: hsl(var(--code-function));
+}
+
+.hljs-attr,
+.hljs-attribute,
+.hljs-variable,
+.hljs-template-variable,
+.hljs-params,
+.hljs-property {
+  color: hsl(var(--code-attr));
+}
+
+.hljs-type,
+.hljs-selector-id,
+.hljs-selector-class,
+.hljs-tag {
+  color: hsl(var(--code-literal));
+}
+
+.hljs-emphasis {
+  font-style: italic;
+}
+
+.hljs-strong {
+  font-weight: 600;
+}
+
+/* Tailwind Typography wraps inline code in literal backtick quotes by default. */
+.prose :where(code):not(:where([class~='not-prose'] *))::before,
+.prose :where(code):not(:where([class~='not-prose'] *))::after {
+  content: none;
+}
+
+.prose :where(code):not(:where(pre code)) {
+  background-color: hsl(var(--muted));
+  border-radius: 0.25rem;
+  padding: 0.125rem 0.3rem;
+  font-weight: 500;
+}
+
+.prose pre {
+  border: 1px solid hsl(var(--border));
+}
+
+/* Colour transitions on every element make syntax tokens flicker on theme change. */
+.hljs,
+.hljs * {
+  transition: none;
 }
 

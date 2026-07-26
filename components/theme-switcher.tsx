@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, useEffect } from 'react'
+import { useMounted } from '@/hooks/use-mounted'
 import { useTheme } from 'next-themes'
 import { Sun, Moon, Monitor } from 'lucide-react'
 import { Button } from "@/components/ui/button"
@@ -12,12 +12,9 @@ import {
 } from "@/components/ui/dropdown-menu"
 
 export function ThemeSwitcher() {
-  const [mounted, setMounted] = useState(false)
   const { setTheme, resolvedTheme } = useTheme()
 
-  useEffect(() => {
-    setMounted(true)
-  }, [])
+  const mounted = useMounted()
 
   if (!mounted) {
     // Return a placeholder or null to avoid hydration mismatch

@@ -4,6 +4,7 @@ import { Badge } from '@/components/ui/badge'
 import Link from 'next/link'
 import { Button } from '@/components/ui/button'
 import { Github, ExternalLink } from 'lucide-react'
+import { AnimatedGroup } from '@/components/ui/animated-group'
 
 const projects = [
     {
@@ -83,13 +84,23 @@ const Projects = () => {
       <h2 className="mb-12 text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">
         Projects
       </h2>
-      <div className="grid gap-6 sm:grid-cols-2">
+      <AnimatedGroup
+        preset="blur-slide"
+        className="grid gap-6 sm:grid-cols-2 [&>div]:h-full"
+        amount={0.05}
+        variants={{
+          container: {
+            hidden: { opacity: 0 },
+            visible: { opacity: 1, transition: { staggerChildren: 0.08, delayChildren: 0.15 } },
+          },
+        }}
+      >
         {projects.map((project) => {
           // Use website_link if available; otherwise, use the link property.
           const headerLink = project.website_link || project.link
           const imageLink = project.website_link || project.link
           return (
-            <Card key={project.title}>
+            <Card key={project.title} className="h-full">
               <CardHeader>
                 <CardTitle>
                   <Link
@@ -150,7 +161,7 @@ const Projects = () => {
             </Card>
           )
         })}
-      </div>
+      </AnimatedGroup>
     </section>
   )
 }

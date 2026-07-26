@@ -1,4 +1,6 @@
 import type { Config } from "tailwindcss";
+import tailwindcssAnimate from "tailwindcss-animate";
+import typography from "@tailwindcss/typography";
 
 export default {
     content: [
@@ -54,8 +56,33 @@ export default {
   			lg: 'var(--radius)',
   			md: 'calc(var(--radius) - 2px)',
   			sm: 'calc(var(--radius) - 4px)'
+  		},
+  		// Drive prose colours off the same CSS variables as the rest of the site so
+  		// blog posts follow the light/dark theme without needing `dark:prose-invert`.
+  		typography: {
+  			DEFAULT: {
+  				css: {
+  					'--tw-prose-body': 'hsl(var(--foreground))',
+  					'--tw-prose-headings': 'hsl(var(--foreground))',
+  					'--tw-prose-lead': 'hsl(var(--muted-foreground))',
+  					'--tw-prose-links': 'hsl(var(--primary))',
+  					'--tw-prose-bold': 'hsl(var(--foreground))',
+  					'--tw-prose-counters': 'hsl(var(--muted-foreground))',
+  					'--tw-prose-bullets': 'hsl(var(--muted-foreground))',
+  					'--tw-prose-hr': 'hsl(var(--border))',
+  					'--tw-prose-quotes': 'hsl(var(--foreground))',
+  					'--tw-prose-quote-borders': 'hsl(var(--border))',
+  					'--tw-prose-captions': 'hsl(var(--muted-foreground))',
+  					'--tw-prose-code': 'hsl(var(--foreground))',
+  					'--tw-prose-pre-code': 'hsl(var(--foreground))',
+  					'--tw-prose-pre-bg': 'hsl(var(--muted))',
+  					'--tw-prose-th-borders': 'hsl(var(--border))',
+  					'--tw-prose-td-borders': 'hsl(var(--border))',
+  					maxWidth: 'none',
+  				}
+  			}
   		}
   	}
   },
-  plugins: [require("tailwindcss-animate")],
+  plugins: [tailwindcssAnimate, typography],
 } satisfies Config;

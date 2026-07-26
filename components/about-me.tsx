@@ -4,12 +4,20 @@ const AboutMe = () => {
       <h2 className="mb-8 text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">About Me</h2>
       <div className="prose prose-lg max-w-none">
         <p>
-          Hi! I&apos;m Riddhimaan, an AI4CW intern at the commonwealth of Massachusetts, creating a RAG chatbot to make access to the Unity HPC platform&apos;s documentation easier.
+          Hi! I&apos;m Riddhimaan, a research intern at Graphite Growth, where I study whether
+          retrieval-augmented generation degrades once a model&apos;s own answers find their way
+          back into the corpus it retrieves from. I also work on the internal platform and the MCP
+          tooling the team uses to support clients.
         </p>
-        <p className="mt-4">
-          When I&apos;m not immersed in coding, you can find me exploring the latest developments in AI, 
-          contributing to open-source projects like Langfair and Dify. I love solving real-world 
-          problems with technology and am always looking for opportunities to make a positive impact.
+        <p>
+          Last summer I was an AI for Commonwealth intern with the Commonwealth of Massachusetts,
+          where I built a RAG chatbot that made the Unity HPC platform&apos;s documentation
+          searchable for more than 500 users.
+        </p>
+        <p>
+          Outside of work I keep up with new AI research and contribute to open source, including
+          Langfair and Dify. I would rather build something people actually use than something that
+          only looks good in a demo.
         </p>
       </div>
     </section>
@@ -17,5 +25,3 @@ const AboutMe = () => {
 }
 
 export default AboutMe;
-
-  

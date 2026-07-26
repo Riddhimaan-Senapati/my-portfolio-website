@@ -1,18 +1,15 @@
 'use client'
 
 import { useTheme } from 'next-themes'
-import { useEffect, useState } from 'react'
 import Image from 'next/image'
+import { useMounted } from '@/hooks/use-mounted'
 
 const GitHubStats = () => {
-  const { theme, systemTheme } = useTheme()
-  const [currentTheme, setCurrentTheme] = useState<string>('light')
-
-  useEffect(() => {
-    // Handle system theme preference
-    const resolvedTheme = theme === 'system' ? systemTheme : theme
-    setCurrentTheme(resolvedTheme || 'light')
-  }, [theme, systemTheme])
+  const { resolvedTheme } = useTheme()
+  const mounted = useMounted()
+  // Stay on the light card until hydration completes, otherwise the server and client
+  // disagree about the image src.
+  const currentTheme = mounted && resolvedTheme === 'dark' ? 'dark' : 'light'
 
   const src = `https://github-readme-stats.vercel.app/api?username=Riddhimaan-Senapati&show_icons=true${currentTheme === 'dark' ? '&theme=radical' : ''}`
 
