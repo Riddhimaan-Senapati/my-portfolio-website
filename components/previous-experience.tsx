@@ -13,7 +13,7 @@ type Experience = {
 const experiences: Experience[] = [
   {
     role: 'Research Intern',
-    organization: 'Graphite Growth, Inc. (answer engine optimization), Amherst, MA',
+    organization: 'Graphite Growth, Inc. (AEO), Amherst, MA',
     period: 'Feb 2026 – Aug 2026',
     logo: '/graphitehq_logo.jpeg',
     logoAlt: 'Graphite Growth Logo',
