@@ -4,10 +4,10 @@ const AboutMe = () => {
       <h2 className="mb-8 text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">About Me</h2>
       <div className="prose prose-lg max-w-none">
         <p>
-          Hi! I&apos;m Riddhimaan, a research intern at Graphite Growth, where I study whether
-          retrieval-augmented generation degrades once a model&apos;s own answers find their way
-          back into the corpus it retrieves from. I also work on the internal platform and the MCP
-          tooling the team uses to support clients.
+          Hi! I&apos;m Riddhimaan, a research intern at Graphite Growth, an answer engine
+          optimization (AEO) company, where I study whether retrieval-augmented generation degrades
+          once a model&apos;s own answers find their way back into the corpus it retrieves from. I
+          also work on the internal platform and the MCP tooling the team uses to support clients.
         </p>
         <p>
           Last summer I was an AI for Commonwealth intern with the Commonwealth of Massachusetts,
