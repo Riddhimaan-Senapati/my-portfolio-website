@@ -314,7 +314,9 @@ export const buildProfileCorpus = () => {
   sections.push(
     `# ${identity.name}\n${identity.headline}. Based in ${identity.location}.\n` +
       `GitHub: ${identity.github}\nLinkedIn: ${identity.linkedin}\nX: ${identity.x}\n` +
-      `Email: ${identity.email}\nRésumé: ${identity.resumePath}`
+      // Described rather than given as a path: the model was quoting the raw
+      // filename at visitors, which reads like a leaked file path.
+      `Email: ${identity.email}\nRésumé: downloadable from the "View Resume" button at the top of the site`
   )
 
   sections.push(`## About\n${about.join('\n\n')}`)
