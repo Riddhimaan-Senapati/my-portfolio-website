@@ -6,6 +6,7 @@ import {
   toUIMessageStream,
   type UIMessage,
 } from 'ai'
+import { after } from 'next/server'
 import { buildProfileCorpus } from '@/lib/profile'
 import { getResumeText } from '@/lib/resume'
 import { getAllPosts } from '@/lib/blog'
@@ -125,12 +126,16 @@ export async function POST(request: Request) {
     },
     onFinish: ({ text }) => {
       if (!isUuid(conversationId)) return
-      // Deliberately not awaited: the reply is already streamed, and transcript
-      // logging must never delay or fail the response.
-      void saveTurns(conversationId, [
-        ...(latestUserText ? [{ role: 'user' as const, content: latestUserText }] : []),
-        ...(text ? [{ role: 'assistant' as const, content: text }] : []),
-      ])
+      // after() runs this once the response is sent while keeping the instance
+      // alive until it settles. A bare floating promise gets killed when the
+      // serverless function freezes after streaming, which silently dropped
+      // roughly half the transcripts in production.
+      after(
+        saveTurns(conversationId, [
+          ...(latestUserText ? [{ role: 'user' as const, content: latestUserText }] : []),
+          ...(text ? [{ role: 'assistant' as const, content: text }] : []),
+        ])
+      )
     },
   })
 
