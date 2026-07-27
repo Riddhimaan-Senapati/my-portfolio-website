@@ -5,11 +5,11 @@ const nextConfig: NextConfig = {
   images: {
     unoptimized: true,
   },
-  // The chat route reads the résumé PDF and the blog markdown at runtime. Next's
-  // tracer can't follow those dynamic fs reads, so they must be declared or the
-  // deployed function would 404 on them and silently fall back to a thinner corpus.
+  // The chat route reads the blog markdown and the build-time résumé extract at
+  // runtime. Next's tracer can't follow those dynamic fs reads, so they must be
+  // declared or the deployed function would silently fall back to a thinner corpus.
   outputFileTracingIncludes: {
-    '/api/chat': ['./content/blog/**', './public/*.pdf'],
+    '/api/chat': ['./content/**'],
   },
   turbopack: {
     // Pin the workspace root: an unrelated lockfile in the parent directory otherwise

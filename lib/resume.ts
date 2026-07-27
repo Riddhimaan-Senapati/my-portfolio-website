@@ -1,9 +1,7 @@
 import { readFile } from 'node:fs/promises'
 import path from 'node:path'
-import { PDFParse } from 'pdf-parse'
-import { identity } from '@/lib/profile'
 
-const RESUME_PATH = path.join(process.cwd(), 'public', path.basename(identity.resumePath))
+const RESUME_TEXT = path.join(process.cwd(), 'content', 'resume.txt')
 
 let cached: string | null | undefined
 
@@ -11,26 +9,18 @@ let cached: string | null | undefined
  * Text of the résumé PDF that the site serves, so the assistant answers from the
  * same document a recruiter downloads.
  *
- * Uses pdf-parse rather than unpdf: unpdf silently drops this PDF's ligatures
- * (`Chief AI Officer` came out as `Chief AI O cer`), which would feed the model
- * corrupted facts.
+ * Reads the extract produced by `scripts/extract-resume.mjs` at build time
+ * rather than parsing the PDF here: pdfjs-dist needs browser DOM globals and
+ * throws on Vercel's Node runtime, which took down the whole route.
  *
- * Memoised per server instance, and returns null on failure so a missing or
- * unreadable file degrades to the structured profile instead of erroring.
+ * Memoised per server instance, and returns null on failure so a missing file
+ * degrades to the structured profile instead of erroring.
  */
 export const getResumeText = async (): Promise<string | null> => {
   if (cached !== undefined) return cached
 
   try {
-    const buffer = await readFile(RESUME_PATH)
-    const parser = new PDFParse({ data: new Uint8Array(buffer) })
-
-    try {
-      const { text } = await parser.getText()
-      cached = text.replace(/[ \t]+\n/g, '\n').replace(/\n{3,}/g, '\n\n').trim() || null
-    } finally {
-      await parser.destroy()
-    }
+    cached = (await readFile(RESUME_TEXT, 'utf8')).trim() || null
   } catch {
     cached = null
   }

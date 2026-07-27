@@ -1,0 +1,57 @@
+Riddhimaan Senapati
+rsenapati@umass.edu | linkedin.com/in/riddhimaan-senapati/ | github.com/Riddhimaan-Senapati | riddhimaan.com
+Education
+University of Massachusetts Amherst Amherst, MA
+M.S. in Computer Science, Data Science & AI Concentration; GPA: 3.90/4.0 Expected Dec 2027
+• Manning College of Information and Computer Science
+University of Massachusetts Amherst Amherst, MA
+B.S. in Computer Science, Summa Cum Laude; GPA: 3.997/4.0 Dec 2025
+• Honors thesis: “Fortifying LLM Relevance Judgements against Query Injection Attacks”
+• AWS Certified AI Practitioner, AWS Certified Cloud Practitioner
+• Relevant Coursework: Algorithms for Data Science, AI Alignment, Systems for Deep Learning, Software
+Engineering, Practice & Application of Data Management, Intro. to Simulation
+Experience
+Research Intern Feb 2026 – Aug 2026
+Graphite Growth, Inc. Amherst, MA
+• Investigating whether retrieval-augmented generation collapses when its own AI-generated answers re-enter the
+retrieval corpus (“RAG collapse”), mentored by Graphite’s Chief AI Officer
+• Built a Python vLLM/LiteLLM serving and evaluation stack (local, HTTP-server, and API back-ends; an
+LLM-as-judge harness; text- and entity-level collapse metrics) and orchestrated 100+ dual-GPU SLURM jobs
+sweeping a 1,400-question benchmark at 10 samples/round across up to 30 recursive rounds
+• Built a GEPA reflective prompt-optimizer with an LLM entity-clustering collapse metric and ran multi-objective
+Pareto search (anti-collapse × answer quality); no optimized candidate beat the already near-Pareto-optimal
+production seed prompt
+• Replicated the HotpotQA distractor benchmark (Yang et al., EMNLP 2018) and shipped an agentic-RAG variant
+with a model-driven retrieve() tool, hardened for multi-model sweeps via async concurrency limits, backoff
+retries, and tool-call fallbacks
+AI & AWS Intern (Hybrid) Apr 2025 – Sept 2025
+AI for Commonwealth of Massachusetts (Mass.Gov) Amherst, MA
+• Built a RAG chatbot (Streamlit, LangChain, AWS Bedrock) for the UMass Unity HPC & AI platform serving
+500+ users, backed by an event-driven AWS Lambda + EventBridge pipeline refreshing 164+ documents weekly
+into a Bedrock Knowledge Base; presented to the Governor of Massachusetts
+• Implemented Anthropic-style contextual retrieval via a custom-chunking Lambda and benchmarked four Bedrock
+models (Claude, Llama, Amazon Nova) on cost, latency, and accuracy to select the production model
+• Implemented a CI/CD pipeline with GitHub Actions, Docker, and AWS CloudFormation, deploying and managing
+a RAG application on AWS ECS with 99.99% uptime; improved accessibility and reduced response time by 30%
+AI/ML Intern (Onsite) Dec 2023 – Jan 2024
+LTIMindtree Chennai, India
+• Optimized the Azure OpenAI API to convert SQL queries between formats for a SQL Server to Microsoft Fabric
+migration, benchmarked over 1,000+ queries, improving query development time by 25%
+Projects
+Selected Projects | FastMCP, CLIP, Supabase, PyTorch, GEPA Fall 2024 – Spring 2026
+• Unofficial Hacker News MCP/CLI: Published to PyPI a dual-interface Hacker News client: a Typer CLI plus
+a FastMCP server exposing 6 typed tools over one shared async httpx client; CI matrix across Python 3.10–3.13
+with tokenless OIDC publishing and 14 network-mocked tests
+• Recuvia: Built a semantic image-search platform (CLIP embeddings, Supabase pgvector, Row-Level-Security
+auth); merged upload, embedding, and vector-DB insert into one cached serverless call to fit Vercel’s free tier
+• Open-Source (LangFair, CVS Health): Merged an upstream PR into CVS Health’s LLM bias/fairness library
+and added Python 3.13 support
+Technical Skills
+AI/ML & LLM: LangChain, vLLM/LiteLLM, Hugging Face, PyTorch, RAG, LLM-as-judge, MCP/FastMCP,
+pgvector/FAISS, embeddings, GEPA
+Languages: Python, TypeScript, Java, SQL, JavaScript
+Cloud & MLOps: AWS (Bedrock, SageMaker, Lambda, ECS, S3, CloudFormation), Docker, GitHub Actions,
+SLURM/HPC, Linux
+Web & Tools: React/React Native, Next.js, Node.js, FastAPI, REST API, Supabase, MongoDB, Git, Tableau
+
+-- 1 of 1 --
