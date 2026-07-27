@@ -42,3 +42,9 @@ next-env.d.ts
 
 # claude folder
 .claude/
+
+# ...but the template documenting required vars should be tracked.
+!.env.example
+
+# Supabase CLI scratch state
+supabase/.temp

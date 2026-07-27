@@ -5,6 +5,7 @@ import { ThemeProvider } from '@/components/theme-provider'
 import MotionProvider from '@/components/motion-provider'
 import Header from '@/components/header'
 import HashScroll from '@/components/hash-scroll'
+import ChatWidget from '@/components/chat-widget'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -44,6 +45,7 @@ export default function RootLayout({
               <Header />
               <HashScroll />
               <main className="container mx-auto px-4 py-8">{children}</main>
+              <ChatWidget />
             </div>
           </MotionProvider>
         </ThemeProvider>

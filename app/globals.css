@@ -69,6 +69,41 @@
   transition: background-color 0.3s ease, color 0.3s ease;
 }
 
+/* GitHub contribution heatmap. Uses GitHub's own two scales so the graph reads
+   the way visitors expect in each theme. */
+:root {
+  --contrib-0: #ebedf0;
+  --contrib-1: #9be9a8;
+  --contrib-2: #40c463;
+  --contrib-3: #30a14e;
+  --contrib-4: #216e39;
+}
+
+.dark {
+  --contrib-0: #161b22;
+  --contrib-1: #0e4429;
+  --contrib-2: #006d32;
+  --contrib-3: #26a641;
+  --contrib-4: #39d353;
+}
+
+.contribution-day {
+  display: block;
+  flex: none;
+  background-color: var(--contrib-0);
+  outline: 1px solid rgb(27 31 35 / 0.06);
+  outline-offset: -1px;
+}
+
+.dark .contribution-day {
+  outline-color: rgb(255 255 255 / 0.05);
+}
+
+.contribution-day[data-level='1'] { background-color: var(--contrib-1); }
+.contribution-day[data-level='2'] { background-color: var(--contrib-2); }
+.contribution-day[data-level='3'] { background-color: var(--contrib-3); }
+.contribution-day[data-level='4'] { background-color: var(--contrib-4); }
+
 /* ---------------------------------------------------------------------------
    Syntax highlighting for blog code blocks.
 

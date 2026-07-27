@@ -1,15 +1,5 @@
 import { AnimatedGroup } from '@/components/ui/animated-group'
-
-const certifications = [
-  {
-    name: 'AWS Certified AI Practitioner',
-    url: 'https://www.credly.com/badges/42ee21f3-762c-478f-a83c-4e16a6aabfdc/public_url',
-  },
-  {
-    name: 'AWS Certified Cloud Practitioner',
-    url: 'https://www.credly.com/badges/c6b05266-8415-452c-a136-78bbec3697aa/public_url',
-  },
-]
+import { certifications } from '@/lib/profile'
 
 const Certifications = () => {
   return (
