@@ -15,8 +15,15 @@ type Turn = { role: 'user' | 'assistant'; content: string }
  * nothing else.
  */
 export const saveTurns = async (conversationId: string, turns: Turn[]) => {
+  if (turns.length === 0) return
+
   const db = getDb()
-  if (!db || turns.length === 0) return
+  if (!db) {
+    // Logged rather than returned silently: an unset DATABASE_URL and a failing
+    // insert are very different problems, and without this they look identical.
+    console.warn('[transcripts] DATABASE_URL not configured; skipping persistence')
+    return
+  }
 
   try {
     // Upsert so the second and later turns of a conversation don't collide.
