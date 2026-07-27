@@ -6,12 +6,18 @@ import {
   toUIMessageStream,
   type UIMessage,
 } from 'ai'
-import { checkBotId } from 'botid/server'
 import { buildProfileCorpus } from '@/lib/profile'
 import { getResumeText } from '@/lib/resume'
 import { getAllPosts } from '@/lib/blog'
-import { checkRateLimit, clientIp } from '@/lib/rate-limit'
 import { saveTurns } from '@/lib/db/transcripts'
+
+// Abuse protection lives in the Vercel WAF rate-limit rule on this path, not in
+// this file. It blocks at the edge, so rejected traffic never costs an
+// invocation and legitimate requests pay no latency for the check.
+//
+// BotID used to guard this route and was removed: it rejected real browsers with
+// 403 while the audience for this endpoint is recruiters, so a false positive is
+// far more costly than the abuse it prevented.
 
 export const maxDuration = 30
 
@@ -81,19 +87,6 @@ let cachedSystemPrompt: Promise<string> | null = null
 const systemPrompt = () => (cachedSystemPrompt ??= buildSystemPrompt())
 
 export async function POST(request: Request) {
-  const verification = await checkBotId()
-  if (verification.isBot) {
-    return Response.json({ error: 'Automated traffic is not allowed.' }, { status: 403 })
-  }
-
-  const { success, reset } = await checkRateLimit(clientIp(request))
-  if (!success) {
-    return Response.json(
-      { error: 'Too many messages. Give it a minute and try again.' },
-      { status: 429, headers: { 'Retry-After': String(Math.max(1, Math.ceil((reset - Date.now()) / 1000))) } }
-    )
-  }
-
   let messages: UIMessage[]
   let conversationId: string | undefined
   try {
